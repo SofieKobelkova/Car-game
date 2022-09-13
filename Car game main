@@ -1,0 +1,79 @@
+import random
+parked = False
+print("type help for help")
+speed = 5
+while True:
+    ran1 = random.randint(1, 2)
+    play = input("> ")
+    if play == 'help':
+        print("w = foward, d = right, a = left, s = backward, t = park, y = unpark, f = drift, u = speed up, \n i = slow down, the max speed is 10, you can die from drifting, your engine can \n break down if you go to max speed, you crash you you move while parked, \n z = enter a drag race, when you enter a drag race you can either die, lose and survive, or win")
+    if play == 'w' and speed >= 1:
+        print(speed)
+        if parked == True:
+            print("You crashed into another car, they sued you and you died from poverty")
+            break
+        print("The car moved foward")
+    if play == 's' and speed >= 1:
+        print(speed)
+        if parked == True:
+            print("You crashed into another car, they sued you and you died from poverty")
+            break
+        print("The car moved backwards")
+    if play == 'd' and speed >= 1:
+        print(speed)
+        if parked == True:
+            print("You crashed into another car, they sued you and you died from poverty")
+            break
+        print("The car moved right")
+    if play == 'a' and speed >= 1:
+        print(speed)
+        if parked == True:
+            print("You crashed into another car, they sued you and you died from poverty")
+            break
+        print("The car moved left")
+    if play == 't' and speed >= 1:
+        print(speed)
+        print("You parked the the car")
+        parked = True
+    if play == 'y' and speed >= 1:
+        print(speed)
+        print("You unparked the car")
+        parked = False
+    if play == 'f' and speed >= 1:
+        print(speed)
+        if ran1 == 1:
+            print("You failed to drift and crashed")
+            break
+        else:
+            print("You successfully drifted")
+    if play == 'u':
+        print("You've sped up")
+        speed += 1
+        print(speed)
+    if play == 'i':
+        print("You've slowed down")
+        speed -= 1
+        print(speed)
+    if speed == 0:
+        print(speed)
+        print("You've stopped")
+    if speed >= 10:
+        ran2 = random.randint(0, 20)
+        if ran2 <= 10:
+            print("You're engine overheated")
+            break
+        else:
+            print("You are at full speed")
+    if speed > 10:
+        speed -= 1
+    if play == 'z' and speed >= 1:
+        print(speed)
+        print("You have entered a drag race")
+        ran3 = random.randint(1, 3)
+        if ran3 == 2:
+            print("You won the drag race!")
+        if ran3 <= 1:
+            print("You lost and died")
+            break
+        if ran3 == 3:
+            print("You survived the race but lost")
